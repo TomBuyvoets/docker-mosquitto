@@ -9,10 +9,10 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.docker.dockerfile="/Dockerfile" \
     org.label-schema.license="BSD 3-Clause" \
     org.label-schema.name="docker-mosquitto" \
-    org.label-schema.url="https://hub.docker.com/r/toke/mosquitto/" \
+    org.label-schema.url="https://hub.docker.com/r/tbuyvoets/mosquitto/" \
     org.label-schema.vcs-ref=$VCS_REF \
     org.label-schema.vcs-type="Git" \
-    org.label-schema.vcs-url="https://github.com/toke/docker-mosquitto"
+    org.label-schema.vcs-url="https://github.com/TomBuyvoets/docker-mosquitto"
 
 RUN apt-get update && apt-get install -y wget gpg && \
     wget -q -O - https://repo.mosquitto.org/debian/mosquitto-repo.gpg.key | gpg --import && \
