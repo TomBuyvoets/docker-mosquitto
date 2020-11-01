@@ -1,6 +1,6 @@
-FROM debian:jessie
+FROM arm64v8/debian:latest
 
-MAINTAINER Thomas Kerpe <toke@toke.de>
+MAINTAINER Tom Buyvoets 
 
 # Build-time metadata as defined at http://label-schema.org
 ARG BUILD_DATE
@@ -14,7 +14,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.vcs-type="Git" \
     org.label-schema.vcs-url="https://github.com/toke/docker-mosquitto"
 
-RUN apt-get update && apt-get install -y wget && \
+RUN apt-get update && apt-get install -y wget gpg && \
     wget -q -O - https://repo.mosquitto.org/debian/mosquitto-repo.gpg.key | gpg --import && \
     gpg -a --export 8277CCB49EC5B595F2D2C71361611AE430993623 | apt-key add - && \
     wget -q -O /etc/apt/sources.list.d/mosquitto-jessie.list https://repo.mosquitto.org/debian/mosquitto-jessie.list && \
